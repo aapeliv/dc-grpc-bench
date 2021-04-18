@@ -21,4 +21,4 @@ stub = messages_pb2_grpc.BenchStub(intercepted_channel)
 
 while True:
     with timer("outer"):
-        stub.Query(messages_pb2.GetGroupChatReq(group_chat_id=15))
+        stub.GetGroupChat(messages_pb2.GetGroupChatReq(group_chat_id=15))
