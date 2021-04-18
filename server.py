@@ -63,13 +63,10 @@ class Servicer(messages_pb2_grpc.BenchServicer):
 server = grpc.server(futures.ThreadPoolExecutor(max_workers=6), interceptors=[LoggingInterceptor()])
 messages_pb2_grpc.add_BenchServicer_to_server(Servicer(), server)
 
-SB_SECURE_KEY_FILE = environ.get("SB_SECURE_KEY_FILE", False)
-SB_SECURE_CHAIN_FILE = environ.get("SB_SECURE_CHAIN_FILE", False)
-
-with open(SB_SECURE_KEY_FILE, "rb") as f:
+with open("privkey.pem", "rb") as f:
     key_data = f.read()
 
-with open(SB_SECURE_CHAIN_FILE, "rb") as f:
+with open("fullchain.pem", "rb") as f:
     chain_data = f.read()
 
 creds = grpc.ssl_server_credentials([(key_data, chain_data)])
