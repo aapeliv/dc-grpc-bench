@@ -50,11 +50,11 @@ class Servicer(messages_pb2_grpc.BenchServicer):
             created=Timestamp_from_datetime(now()),
             unseen_message_count=15,
             last_seen_message_id=8839123,
-            latest_message=conversations_pb2.Message(
+            latest_message=messages_pb2.Message(
                 message_id=119,
                 author_user_id=309,
                 time=Timestamp_from_datetime(now()),
-                text=conversations_pb2.MessageContentText(text="this is a pretend message"),
+                text=messages_pb2.MessageContentText(text="this is a pretend message"),
             ),
         )
 
