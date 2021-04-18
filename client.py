@@ -1,4 +1,3 @@
-import logging
 from time import sleep
 
 import grpc
@@ -7,7 +6,6 @@ import messages_pb2_grpc
 
 from shared import timer
 
-logger = logging.getLogger(__name__)
 
 class LoggingInterceptor(grpc.UnaryUnaryClientInterceptor):
     def intercept_unary_unary(self, continuation, client_call_details, request):
