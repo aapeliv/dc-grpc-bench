@@ -1,5 +1,6 @@
 from contextlib import contextmanager
 import logging
+from time import perf_counter_ns
 
 logging.basicConfig(format="%(asctime)s: %(name)s: %(message)s", level=logging.INFO)
 
