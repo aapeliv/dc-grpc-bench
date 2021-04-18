@@ -10,4 +10,4 @@ def timer(task="(unnamed)"):
     start = perf_counter_ns()
     yield
     duration = perf_counter_ns() - start
-    logger.info(f"Did {task} in {duration:0.2f} ns.")
+    logger.info(f"Did {task} in {duration:0.2f} ns ({duration/1e6:0.2f} ms).")
